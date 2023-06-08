@@ -10,7 +10,7 @@
     @livewireStyles
 </head>
 
-<body class="antialiased" wire:ignore>
+<body class="antialiased">
     <div class="page">
         <!-- Navbar -->
         @include('template.inc.header')

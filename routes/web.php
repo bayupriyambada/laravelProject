@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Livewire\Pages\Books\CreateComponent as BooksCreateComponent;
+use App\Http\Livewire\Pages\Books\UpdateComponent as BooksUpdateComponent;
 use App\Http\Livewire\Pages\BooksComponent;
 use App\Http\Livewire\Pages\Categories\CreateComponent;
 use App\Http\Livewire\Pages\Categories\UpdateComponent;
@@ -19,4 +21,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get("/categories/create", CreateComponent::class)->name("categories.create");
     Route::get("/categories/{categoriesId}/update", UpdateComponent::class)->name("categories.update");
     Route::delete("/categories/{categoriesId}/delete", CategoriesComponent::class)->name("categories.destroy");
+
+    //books
+    Route::get("/books", BooksComponent::class)->name("books");
+    Route::get("/books/create", BooksCreateComponent::class)->name("books.create");
+    Route::get("/books/{booksId}/update", BooksUpdateComponent::class)->name("books.update");
+    Route::delete("/books/{booksId}/delete", BooksComponent::class)->name("books.destroy");
 });
