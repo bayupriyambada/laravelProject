@@ -7,6 +7,11 @@
                 {{ session('message') }}
             </div>
         @endif
+        @if (session()->has('warning'))
+            <div class="alert alert-warning">
+                {{ session('warning') }}
+            </div>
+        @endif
     </div>
     <div class="col-lg-12 mt-3">
         <div class="card">
@@ -27,8 +32,8 @@
                                 <td class="d-flex gap-1">
                                     <a href="{{ route('categories.update', $item->id) }}"
                                         class="btn btn-yellow">Edit</a>
-                                    <a href="#" wire:click.prevent="destroy({{ $item->id }})"
-                                        class="btn btn-red">Delete</a>
+                                    <button wire:click.prevent="destroy({{ $item->id }})"
+                                        class="btn btn-red">Delete</button>
                                 </td>
                             </tr>
                         @endforeach

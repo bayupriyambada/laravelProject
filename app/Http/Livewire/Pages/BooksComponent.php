@@ -7,6 +7,13 @@ use Livewire\Component;
 
 class BooksComponent extends Component
 {
+    public function destroy($booksId)
+    {
+        $findBook = Books::find($booksId);
+        $findBook->delete();
+        session()->flash('message', 'Category ' . $findBook->name . ' successfully deleted!');
+        return redirect()->back();
+    }
     public function render()
     {
         $allBooks = Books::query()->with("category")->latest()->get();

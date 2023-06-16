@@ -1,5 +1,5 @@
+@section("title" , $title)
 <div>
-
     <div class="container container-tight py-4">
         <div>
             @if (session()->has('message'))

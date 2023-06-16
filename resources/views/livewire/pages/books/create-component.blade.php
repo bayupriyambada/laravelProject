@@ -1,11 +1,4 @@
 <div>
-    <div>
-        @if (session()->has('message'))
-            <div class="alert alert-success">
-                {{ session('message') }}
-            </div>
-        @endif
-    </div>
     <div class="card">
         <div class="card-body">
             <form wire:submit="create" autocomplete="off">
@@ -25,7 +18,7 @@
                         @endforeach
                     </select>
                 </div>
-                <button class="btn btn-primary">Save</button>
+                <button type="submit" class="btn btn-primary">Save</button>
             </form>
         </div>
     </div>

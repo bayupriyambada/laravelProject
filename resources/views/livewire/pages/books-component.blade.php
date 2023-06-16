@@ -30,8 +30,8 @@
                                 <td class="d-flex gap-1">
                                     <a href="{{ route('books.update', $item->id) }}"
                                         class="btn btn-yellow">Edit</a>
-                                    <a href="#" wire:click.prevent="destroy({{ $item->id }})"
-                                        class="btn btn-red">Delete</a>
+                                    <button wire:click.prevent="destroy({{ $item->id }})"
+                                        class="btn btn-red">Delete</button>
                                 </td>
                             </tr>
                         @endforeach

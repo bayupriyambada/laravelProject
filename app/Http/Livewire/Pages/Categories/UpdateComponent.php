@@ -29,7 +29,7 @@ class UpdateComponent extends Component
             'name' => $this->name
         ]);
         session()->flash('message', 'Category successfully updated!');
-        return redirect()->back();
+        return redirect()->route("categories");
     }
     public function render()
     {

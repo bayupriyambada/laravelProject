@@ -20,7 +20,7 @@ class CreateComponent extends Component
             'name' => $this->name
         ]);
         session()->flash('message', 'Category successfully created!');
-        return redirect(back());
+        return redirect(route("categories"));
     }
     public function render()
     {

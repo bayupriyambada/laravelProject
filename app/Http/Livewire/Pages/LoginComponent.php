@@ -9,15 +9,14 @@ class LoginComponent extends Component
 {
     public $email;
     public $password;
+    public $title = 'Sign In.';
     protected $rules = [
         'password' => 'required',
         'email' => 'required|email',
     ];
     public function handleLogin()
     {
-
         $this->validate(); // validasi dari protected $rules wajib di isikan
-
         $credentials = [
             'email' => $this->email, // melakukan input email
             'password' => $this->password // melakukan input password

@@ -24,7 +24,7 @@ class CreateComponent extends Component
             'categories_id' => $this->categories_id
         ]);
         session()->flash('message', 'Books successfully created!');
-        return redirect(back());
+        return redirect(route("books"));
     }
     public function render()
     {
