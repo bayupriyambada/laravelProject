@@ -1,3 +1,4 @@
+@section("title" , "Update Categories: $name")
 <div>
     <div class="card">
         <div class="card-body">

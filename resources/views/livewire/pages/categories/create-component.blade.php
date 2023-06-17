@@ -1,3 +1,4 @@
+@section("title" , "Create Categories")
 <div>
     <div class="card">
         <div class="card-body">

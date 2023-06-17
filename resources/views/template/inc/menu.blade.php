@@ -5,12 +5,12 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('categories') }}">
+        <a class="nav-link" href="{{ route('categories.index') }}">
             <span class="nav-link-title"> Categories </span>
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('books') }}">
+        <a class="nav-link" href="{{ route('books.index') }}">
             <span class="nav-link-title"> Books </span>
         </a>
     </li>

@@ -16,15 +16,24 @@ Route::middleware(['guest'])->group(function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::get("/", HomeComponent::class)->name("dashboard");
-    Route::get("/books", BooksComponent::class)->name("books");
-    Route::get("/categories", CategoriesComponent::class)->name("categories");
-    Route::get("/categories/create", CreateComponent::class)->name("categories.create");
-    Route::get("/categories/{categoriesId}/update", UpdateComponent::class)->name("categories.update");
-    Route::delete("/categories/{categoriesId}/delete", CategoriesComponent::class)->name("categories.destroy");
 
+    // categories
+    Route::prefix("categories")->name("categories.")->group(function () {
+        Route::get("", CategoriesComponent::class)->name("index");
+        Route::get("/create", CreateComponent::class)->name("create");
+        Route::get("/{categoriesId}/update", UpdateComponent::class)->name("update");
+        Route::delete("/{categoriesId}/delete", CategoriesComponent::class)->name("destroy");
+    });
     //books
-    Route::get("/books", BooksComponent::class)->name("books");
-    Route::get("/books/create", BooksCreateComponent::class)->name("books.create");
-    Route::get("/books/{booksId}/update", BooksUpdateComponent::class)->name("books.update");
-    Route::delete("/books/{booksId}/delete", BooksComponent::class)->name("books.destroy");
+    Route::prefix("books")->name("books.")->group(function () {
+        Route::get("", BooksComponent::class)->name("index");
+        Route::get("/create", BooksCreateComponent::class)->name("create");
+        Route::get("/{booksId}/update", BooksUpdateComponent::class)->name("update");
+        Route::delete("/{booksId}/delete", BooksComponent::class)->name("destroy");
+    });
+
+
+    Route::get("/produk/{produkId}/tags"); // list tags in produk
+    Route::get("/produk/{produkId}/tags/{tagsId}"); // update tags in produk
+    Route::get("/produk/{produkId}/tags/1"); // update tags in produk
 });

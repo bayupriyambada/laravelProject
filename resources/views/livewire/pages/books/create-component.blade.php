@@ -1,3 +1,5 @@
+@section("title" , "Create Books")
+
 <div>
     <div class="card">
         <div class="card-body">

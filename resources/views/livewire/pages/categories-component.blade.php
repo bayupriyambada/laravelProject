@@ -1,5 +1,6 @@
-<div>
+@section("title" , "List Categories")
 
+<div>
     <a href="{{ route('categories.create') }}" class="btn btn-success">Create a new</a>
     <div class="mt-2">
         @if (session()->has('message'))

@@ -1,5 +1,6 @@
-<div>
+@section("title" , "List Books")
 
+<div>
     <a href="{{ route('books.create') }}" class="btn btn-success">Create a new</a>
     <div class="mt-2">
         @if (session()->has('message'))
